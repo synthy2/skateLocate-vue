@@ -1,14 +1,26 @@
 <template>
 	<div>
 		<router-view></router-view>
+    <messaging-component />
 	</div>
 </template>
 
 <script>
 	import { mapGetters }	from "vuex";
 
+  import Messaging from "./Messaging/Messaging.vue";
+
 	export default {
-    name: "app"
+    name: "app",
+    components: {
+      "messaging-component": Messaging
+    },
+    computed: {
+      ...mapGetters([
+        "isAddingMarkers",
+        "isShowingNotification"
+      ])
+    }
 	}
 </script>
 
@@ -29,5 +41,6 @@
   h2 {
     letter-spacing: 4px;
   }
+
 
 </style>

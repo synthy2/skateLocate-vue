@@ -1,3 +1,6 @@
 export default {
-	locations: []
+	locations: [],
+  isAddingMarkers: false,
+  isShowingNotification: false,
+  notificationMessageText: ""
 };
