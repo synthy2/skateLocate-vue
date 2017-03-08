@@ -27,8 +27,7 @@ module.exports = {
       },
   	  {
     		test: /\.css$/,
-    		loader: "css-loader",
-    		exclude: /node_modules/
+    		loader: "style-loader!css-loader"
   	  },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -48,7 +47,7 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true
   },
-  devtool: '#eval-source-map',
+  devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {

@@ -1,14 +1,13 @@
-import Vue 									from "vue";
-import VueRouter 						from "vue-router";
+import Vue                                      from "vue";
+import VueRouter                                from "vue-router";
 
 Vue.use(VueRouter);
 
-import ContactsView 				from "../components/Contacts/ContactsView.vue";
+import Maps                                     from "../components/Map/MapsView.vue";
 
 // define routes
 const routes = [
-	{ path: "/", redirect: "/contacts" },
-	{ path: "/contacts", component: ContactsView }
+	{ path: "/", component: Maps }
 ];
 
 // initialise & export Instance

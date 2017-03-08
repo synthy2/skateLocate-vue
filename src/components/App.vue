@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<h2>It works!</h2>
 		<router-view></router-view>
 	</div>
 </template>
@@ -9,22 +8,26 @@
 	import { mapGetters }	from "vuex";
 
 	export default {
-		name: "app",
+    name: "app"
 	}
 </script>
 
 <style lang="scss">
 
-  $background: #817a7a;
-  $fontColour: #3c3838;
+  $background: #ffffff;
+  $fontColour: #565e75;
+  $masterFont: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 
   body {
     background: $background;
     color: $fontColour;
+    font-family: $masterFont;
+    margin: 0;
+    padding: 0;
   }
 
   h2 {
-    letter-spacing: 12px;
+    letter-spacing: 4px;
   }
 
 </style>
