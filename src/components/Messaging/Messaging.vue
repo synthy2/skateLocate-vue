@@ -23,6 +23,10 @@
     position: absolute;
     transition: 0.5s all;
     z-index: 2000;
+    padding: 16px;
+    border-radius: 8px;
+    background: black;
+    margin: 8px;
   }
 
   .show-messaging-component {

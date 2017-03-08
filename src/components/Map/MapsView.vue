@@ -6,7 +6,9 @@
 </template>
 
 <script>
-
+/*
+ * LEAFLET STUFF
+ */
 import L from "leaflet";
 import "leaflet-routing-machine";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
@@ -15,7 +17,18 @@ import "leaflet-control-geocoder";
 import "leaflet.locatecontrol";
 import "leaflet/dist/leaflet.css";
 
+/*
+ * CUSTOM LEAFLET COMPONENTS
+ */
 import Controls from "./Controls.vue";
+
+/*
+ * FIREBASE
+ */
+import firebase from "firebase";
+import firebaseInstance from "../config/firebaseInstance.js";
+
+const database = firebaseInstance.database();
 
 export default {
     components: {
@@ -33,13 +46,14 @@ export default {
       init(){
         this.map = L.map("map").setView([51.505, -0.09], 13);
         this.addMapTiles();
+        this.bindToFirebase();
         this.addControls();
         this.disableZoom();
       },
       addControls(){
 
         //this.addRoutingMachine();
-        this.addGeolocation();
+        //this.addGeolocation();
 
       },
       addMapTiles(){
@@ -60,6 +74,9 @@ export default {
       addGeolocation(){
         let geo = L.control.locate();
         geo.addTo(this.map);
+      },
+      bindToFirebase(){
+        // this automagically populates the `locations` array in the state which is then used leaflet to draw the markers
       },
       disableZoom(){
         this.map.zoomControl.remove();

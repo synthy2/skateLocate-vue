@@ -1,7 +1,15 @@
 <template lang="html">
   <section class="controls">
-    <button type="button" name="button" v-if="!isAddingMarkers" v-on:click="toggleAddingMarkers">Enable Marker Addition</button>
-    <button type="button" name="button" v-if="isAddingMarkers" v-on:click="toggleAddingMarkers">Disable Marker Addition</button>
+
+    <div class="toggle-adding">
+      <button type="button" name="button" v-if="!isAddingMarkers" v-on:click="toggleAddingMarkers">Add New Park</button>
+      <button type="button" name="button" v-if="isAddingMarkers" v-on:click="toggleAddingMarkers">Stop</button>
+    </div>
+
+    <div class="toggle-adding">
+
+    </div>
+
   </section>
 </template>
 
@@ -24,5 +32,13 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+
+  .controls {
+    height: 100vh;
+    width: 128px;
+    background: white;
+    border-right: 2px solid #c6c9b8;
+  }
+
 </style>
