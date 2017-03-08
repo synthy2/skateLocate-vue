@@ -1,6 +1,7 @@
 
 // LIBS
 import Vue 									from "vue";
+import { generateBind } 		from "vuexfire";
 import { sync }							from "vuex-router-sync";
 
 // STORE
@@ -23,3 +24,7 @@ new Vue({
 	router,
 	store,
 });
+
+const { bind, unbind } 		= generateBind(store);
+
+export { bind, unbind };

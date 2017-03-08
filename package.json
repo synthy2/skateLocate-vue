@@ -10,6 +10,7 @@
   "license": "MIT",
   "repository": "https://github.com/synthy2/springboard.git",
   "dependencies": {
+    "firebase": "^3.7.0",
     "jquery": "^3.1.1",
     "leaflet": "^1.0.3",
     "leaflet-control-geocoder": "^1.5.4",

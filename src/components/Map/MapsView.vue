@@ -26,7 +26,7 @@ import Controls from "./Controls.vue";
  * FIREBASE
  */
 import firebase from "firebase";
-import firebaseInstance from "../config/firebaseInstance.js";
+import firebaseInstance from "../../config/firebaseConfig.js";
 
 const database = firebaseInstance.database();
 
@@ -77,6 +77,10 @@ export default {
       },
       bindToFirebase(){
         // this automagically populates the `locations` array in the state which is then used leaflet to draw the markers
+        this.$store.dispatch("bindFirebase", {
+          name: "locations",
+          ref: database.ref(`/locations`)
+        });
       },
       disableZoom(){
         this.map.zoomControl.remove();
